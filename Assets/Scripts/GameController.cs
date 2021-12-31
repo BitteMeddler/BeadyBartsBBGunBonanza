@@ -11,9 +11,9 @@ public class GameController : MonoBehaviour
     private float roundTime = 30;
     public bool isGameActive;
 
-    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI scoreNumberText;
     public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerNumberText;
 
     public Button startButton;
     public Button resetButton;
@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         spawnController = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        timerText.text = "Time: " + roundTime;
+        timerNumberText.text = "" + roundTime;
     }
 
     private void Update()
@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour
     public void ScoreTracker(int pointsFromTarget)
     {
         currentScore += pointsFromTarget;
-        scoreText.text = "Score: " + currentScore;
+        scoreNumberText.text = "" + currentScore;
     }
 
     public int CountDownTimer()
@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
         int timer = (int)(roundTime -= Time.deltaTime);
         if (timer > 0 && isGameActive == true)
         { 
-            timerText.text = "Time: " + timer;
+            timerNumberText.text = "" + timer;
         }
         else
         {
@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
 
     public void GameEnd()
     {
-        timerText.text = "Time: " + 0;
+        timerNumberText.text = "Time: " + 0;
 
         isGameActive = false;
         gameOverText.gameObject.SetActive(true);
