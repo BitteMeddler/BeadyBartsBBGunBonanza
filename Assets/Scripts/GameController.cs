@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
 
     public void GameEnd()
     {
-        timerNumberText.text = "Time: " + 0;
+        timerNumberText.text = "" + 0;
 
         isGameActive = false;
         gameOverText.gameObject.SetActive(true);

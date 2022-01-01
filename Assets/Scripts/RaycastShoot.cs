@@ -44,8 +44,7 @@ public class RaycastShoot : MonoBehaviour
                 hitEffect.transform.position = hit.point;
                 hitEffect.transform.forward = hit.normal;
                 hitEffect.Emit(1);
-                bbSpawnPosition = new Vector3(gunEndPos.position.x, gunEndPos.position.y, gunEndPos.position.z);
-                Instantiate(bb, bbSpawnPosition, this.transform.rotation);
+                SpawnBB(gunEndPos);
                 TargetBehavior target = hit.collider.GetComponent<TargetBehavior>();
                 if (target != null)
                 {
@@ -55,5 +54,11 @@ public class RaycastShoot : MonoBehaviour
             }
 
         }
+    }
+
+    public void SpawnBB(Transform gunEndPos)
+    {
+        bbSpawnPosition = new Vector3(gunEndPos.position.x, gunEndPos.position.y, gunEndPos.position.z);
+        Instantiate(bb, bbSpawnPosition, this.transform.rotation);
     }
 }
