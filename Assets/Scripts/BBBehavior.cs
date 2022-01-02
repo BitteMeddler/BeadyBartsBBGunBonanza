@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BBBehavior : MonoBehaviour
 {
-    private float moveSpeed = 100f;
+    private float moveSpeed = 220f;
 
     // Start is called before the first frame update
     void Start()
