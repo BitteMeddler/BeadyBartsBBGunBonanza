@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] targets;
+    public BoxCollider[] tierColliders;
 
     private int targetIndex;
 
@@ -32,7 +33,7 @@ public class SpawnManager : MonoBehaviour
             spawnPositionX = 7f;
             spawnPositionZ = 1.5f;
             targetIndex = Random.Range(0, 3);
-            Spawn("Tier0", targetIndex);
+            Spawn(0, targetIndex);
         }
 
     }
@@ -44,7 +45,7 @@ public class SpawnManager : MonoBehaviour
             spawnPositionX = -7f;
             spawnPositionZ = 2.5f;
             targetIndex = Random.Range(3, 6);
-            Spawn("Tier1", targetIndex);
+            Spawn(1, targetIndex);
         }
     }
 
@@ -55,7 +56,7 @@ public class SpawnManager : MonoBehaviour
             spawnPositionX = 7f;
             spawnPositionZ = 3.5f;
             targetIndex = Random.Range(6, 9);
-            Spawn("Tier2", targetIndex);
+            Spawn(2, targetIndex);
         }
     }
 
@@ -66,15 +67,14 @@ public class SpawnManager : MonoBehaviour
             spawnPositionX = -7f;
             spawnPositionZ = 4.5f;
             targetIndex = Random.Range(9, 12);
-            Spawn("Tier3", targetIndex);
+            Spawn(3, targetIndex);
         }
     }
 
-    private void Spawn(string tierNumber, int targetIndex)
-    {
-        tierCollider = GameObject.Find(tierNumber).GetComponent<BoxCollider>();
+    private void Spawn(int tierIndex, int targetIndex)
+    { 
 
-        float yPosition = ((this.transform.localScale.y / 2) + tierCollider.bounds.max.y);
+        float yPosition = ((this.transform.localScale.y / 2) + tierColliders[tierIndex].bounds.max.y);
         spawnLocation = new Vector3(spawnPositionX, yPosition, spawnPositionZ);
         this.transform.position = spawnLocation;
 
