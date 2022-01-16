@@ -5,11 +5,11 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] targets;
-    public BoxCollider[] tierColliders;
-
+    public GameObject[] tiers;
+    private BoxCollider[] tierColliders;
+    
     private int targetIndex;
 
-    private BoxCollider tierCollider;
     private GameController gameControllerScript;
 
     private float spawnPositionX;
@@ -19,6 +19,11 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
+        tierColliders = new BoxCollider[tiers.Length];
+        for (int i = 0; i < tiers.Length; i++)
+        {
+            tierColliders[i] = tiers[i].GetComponent<BoxCollider>();
+        }
         gameControllerScript = GameObject.Find("GameController").GetComponent<GameController>();
         InvokeRepeating("SpawnerZero", 1f, 1.4f);
         InvokeRepeating("SpawnerOne", .2f, 1f);
