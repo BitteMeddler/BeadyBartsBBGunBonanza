@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    private float spawnPositionX;
+    private float spawnPositionZ;
+    private int targetIndex;
+
     public GameObject[] targets;
     public GameObject[] tiers;
     private BoxCollider[] tierColliders;
-    
-    private int targetIndex;
 
     private GameController gameControllerScript;
-
-    private float spawnPositionX;
-    private float spawnPositionZ;
 
     private Vector3 spawnLocation;
 
@@ -76,16 +75,12 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    private void Spawn(int tierIndex, int targetIndex)
+    public void Spawn(int tierIndex, int targetIndex)
     { 
-
-        float yPosition = ((this.transform.localScale.y / 2) + tierColliders[tierIndex].bounds.max.y);
+        float yPosition = (tierColliders[tierIndex].bounds.max.y);
         spawnLocation = new Vector3(spawnPositionX, yPosition, spawnPositionZ);
         this.transform.position = spawnLocation;
 
-
         Instantiate(targets[targetIndex], spawnLocation, targets[targetIndex].transform.rotation);
     }
-    
-
 }

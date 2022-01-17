@@ -30,12 +30,10 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-
         if (isGameActive)
         {
             CountDownTimer();
         }
-
     }
 
     public void ScoreTracker(int pointsFromTarget)

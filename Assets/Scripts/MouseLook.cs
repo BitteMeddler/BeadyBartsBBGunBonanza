@@ -95,7 +95,6 @@ public class MouseLook : MonoBehaviour
     private void ResetPosition()
     {
         //Centers mouselook at start
-
         Vector3 euler = transform.localEulerAngles;
 
         if (euler.x >= 180)

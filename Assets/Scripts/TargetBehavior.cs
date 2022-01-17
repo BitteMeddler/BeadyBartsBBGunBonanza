@@ -5,10 +5,10 @@ using UnityEngine;
 public class TargetBehavior : MonoBehaviour
 {
     private float moveSpeed;
-    private Vector3 direction;
     private float boundary = 8;
     public int pointValue;
-    private GameController gameControllerScript;
+
+    private Vector3 direction;
 
     private void Start()
     {
@@ -17,32 +17,32 @@ public class TargetBehavior : MonoBehaviour
 
     void Update()
     {
-        TargetMovement();   
+        TargetMovement();
     }
 
     public void InitializeTargetProperties()
     {
         if (gameObject.CompareTag("Tier0Target"))
         {
-            direction = Vector3.left;
+            direction = Vector3.forward;
             pointValue = 25;
             moveSpeed = 12f;
         }
         else if (gameObject.CompareTag("Tier1Target"))
         {
-            direction = Vector3.right;
+            direction = Vector3.forward;
             pointValue = 5;
             moveSpeed = 5f;
         }
         else if (gameObject.CompareTag("Tier2Target"))
         {
-            direction = Vector3.left;
+            direction = Vector3.forward;
             pointValue = 10;
             moveSpeed = 8f;
         }
         else if (gameObject.CompareTag("Tier3Target"))
         {
-            direction = Vector3.right;
+            direction = Vector3.forward;
             pointValue = 50;
             moveSpeed = 16f;
         }
