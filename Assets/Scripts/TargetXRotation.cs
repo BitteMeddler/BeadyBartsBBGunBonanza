@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetXRotation : MonoBehaviour
@@ -13,13 +11,13 @@ public class TargetXRotation : MonoBehaviour
 
     void Update()
     {
-        if (this.transform.position.y > spawnManagerScript.tierColliders[3].bounds.max.y + 1)
+        if (this.transform.position.y > spawnManagerScript.birdBounds.bounds.max.y)
         {
-            this.transform.localRotation = Quaternion.Euler(30, 0, 0);
+            this.transform.localRotation = Quaternion.Euler(30, 90, 0);
         }
-        else if (this.transform.position.y < spawnManagerScript.tierColliders[3].bounds.max.y + .2f)
+        else if (this.transform.position.y < spawnManagerScript.birdBounds.bounds.min.y)
         {
-            this.transform.localRotation = Quaternion.Euler(-12, 0, 0);
+            this.transform.localRotation = Quaternion.Euler(348, 90, 0);
         }
 
     }

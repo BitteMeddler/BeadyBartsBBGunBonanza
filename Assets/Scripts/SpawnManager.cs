@@ -5,12 +5,16 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     private float spawnPositionX;
+    private float spawnPositionY;
     private float spawnPositionZ;
+    
     private int targetIndex;
 
     public GameObject[] targets;
     public GameObject[] tiers;
     public BoxCollider[] tierColliders;
+    public GameObject birdBounder;
+    public BoxCollider birdBounds;
 
     private GameController gameControllerScript;
 
@@ -18,6 +22,8 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
+        birdBounds = birdBounder.GetComponent<BoxCollider>();
+
         tierColliders = new BoxCollider[tiers.Length];
         for (int i = 0; i < tiers.Length; i++)
         {
@@ -73,9 +79,17 @@ public class SpawnManager : MonoBehaviour
 
     public void Spawn(int tierIndex, int targetIndex)
     {
+
         float zPosition = Random.Range(tierColliders[tierIndex].bounds.min.z + .2f, tierColliders[tierIndex].bounds.max.z - .2f);
-        float yPosition = (tierColliders[tierIndex].bounds.max.y);
-        spawnLocation = new Vector3(spawnPositionX, yPosition, zPosition);
+        if (tierIndex == 3)
+        {
+            spawnPositionY = Random.Range(birdBounds.bounds.min.y, birdBounds.bounds.max.y);
+        }
+        else
+        {
+            spawnPositionY = (tierColliders[tierIndex].bounds.max.y);
+        }
+        spawnLocation = new Vector3(spawnPositionX, spawnPositionY, zPosition);
         this.transform.position = spawnLocation;
 
         Instantiate(targets[targetIndex], spawnLocation, targets[targetIndex].transform.rotation);
