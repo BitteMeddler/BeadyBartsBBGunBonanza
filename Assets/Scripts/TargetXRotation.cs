@@ -13,11 +13,11 @@ public class TargetXRotation : MonoBehaviour
     {
         if (this.transform.position.y > spawnManagerScript.birdBounds.bounds.max.y)
         {
-            this.transform.localRotation = Quaternion.Euler(30, 90, 0);
+            this.transform.rotation = Quaternion.Euler(30, 90, 0);
         }
         else if (this.transform.position.y < spawnManagerScript.birdBounds.bounds.min.y)
         {
-            this.transform.localRotation = Quaternion.Euler(348, 90, 0);
+            this.transform.rotation = Quaternion.Euler(348, 90, 0);
         }
 
     }
