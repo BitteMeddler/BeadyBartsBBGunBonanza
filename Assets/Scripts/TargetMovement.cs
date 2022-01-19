@@ -23,7 +23,7 @@ public class TargetMovement : MonoBehaviour
         if (gameObject.CompareTag("Tier0Target"))
         {
             pointValue = 25;
-            moveSpeed = 12f;
+            moveSpeed = 16f;
         }
         else if (gameObject.CompareTag("Tier1Target"))
         {
@@ -38,7 +38,7 @@ public class TargetMovement : MonoBehaviour
         else if (gameObject.CompareTag("Tier3Target"))
         {
             pointValue = 50;
-            moveSpeed = 4f;
+            moveSpeed = 10f;
         }
     }
 
