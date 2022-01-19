@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject[] targets;
     public GameObject[] tiers;
-    private BoxCollider[] tierColliders;
+    public BoxCollider[] tierColliders;
 
     private GameController gameControllerScript;
 
@@ -35,7 +35,6 @@ public class SpawnManager : MonoBehaviour
         if (gameControllerScript.isGameActive)
         {
             spawnPositionX = 7f;
-            spawnPositionZ = 1.5f;
             targetIndex = Random.Range(0, 3);
             Spawn(0, targetIndex);
         }
@@ -47,7 +46,6 @@ public class SpawnManager : MonoBehaviour
         if (gameControllerScript.isGameActive)
         {
             spawnPositionX = -7f;
-            spawnPositionZ = 2.5f;
             targetIndex = Random.Range(3, 6);
             Spawn(1, targetIndex);
         }
@@ -58,7 +56,6 @@ public class SpawnManager : MonoBehaviour
         if (gameControllerScript.isGameActive)
         {
             spawnPositionX = 7f;
-            spawnPositionZ = 3.5f;
             targetIndex = Random.Range(6, 9);
             Spawn(2, targetIndex);
         }
@@ -69,16 +66,16 @@ public class SpawnManager : MonoBehaviour
         if (gameControllerScript.isGameActive)
         {
             spawnPositionX = -7f;
-            spawnPositionZ = 4.5f;
             targetIndex = Random.Range(9, 12);
             Spawn(3, targetIndex);
         }
     }
 
     public void Spawn(int tierIndex, int targetIndex)
-    { 
+    {
+        float zPosition = Random.Range(tierColliders[tierIndex].bounds.min.z + .2f, tierColliders[tierIndex].bounds.max.z - .2f);
         float yPosition = (tierColliders[tierIndex].bounds.max.y);
-        spawnLocation = new Vector3(spawnPositionX, yPosition, spawnPositionZ);
+        spawnLocation = new Vector3(spawnPositionX, yPosition, zPosition);
         this.transform.position = spawnLocation;
 
         Instantiate(targets[targetIndex], spawnLocation, targets[targetIndex].transform.rotation);

@@ -93,8 +93,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1589346451569416650}
   - component: {fileID: 1589346451560186498}
-  - component: {fileID: 6330311332813614306}
   - component: {fileID: -8724767828681416054}
+  - component: {fileID: -4748786264425624078}
+  - component: {fileID: 4033627536231418140}
   m_Layer: 0
   m_Name: Animal_Stag_01
   m_TagString: Tier1Target
@@ -145,19 +146,6 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &6330311332813614306
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589346451569624892}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.11652917, y: 0.35035908, z: 0.38530853}
-  m_Center: {x: -0.002374927, y: 0.1749085, z: 0.047597293}
 --- !u!114 &-8724767828681416054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +159,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
+--- !u!136 &-4748786264425624078
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589346451569624892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0645447
+  m_Height: 0.30775958
+  m_Direction: 2
+  m_Center: {x: 3.58638e-17, y: 0.19295633, z: 0.010523965}
+--- !u!135 &4033627536231418140
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589346451569624892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.06641883
+  m_Center: {x: 5.550937e-16, y: 0.29593337, z: 0.1701405}
 --- !u!1 &1589346451569643596
 GameObject:
   m_ObjectHideFlags: 0

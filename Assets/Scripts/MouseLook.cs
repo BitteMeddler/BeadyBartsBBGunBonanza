@@ -42,7 +42,7 @@ public class MouseLook : MonoBehaviour
         }
         else
         {
-            maxVerticalAngleTop = -13f;
+            maxVerticalAngleTop = -20f;
             maxVerticalAngleBottom = 20f;
         }
         return Mathf.Clamp(angle, maxVerticalAngleTop, maxVerticalAngleBottom);

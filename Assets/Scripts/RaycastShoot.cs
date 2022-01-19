@@ -45,7 +45,7 @@ public class RaycastShoot : MonoBehaviour
                 hitEffect.transform.forward = hit.normal;
                 hitEffect.Emit(1);
                 SpawnBB(gunEndPos);
-                TargetBehavior target = hit.collider.GetComponent<TargetBehavior>();
+                TargetMovement target = hit.collider.GetComponent<TargetMovement>();
                 if (target != null)
                 {
                     gameController.ScoreTracker(target.pointValue);

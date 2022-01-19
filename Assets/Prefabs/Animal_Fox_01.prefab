@@ -176,8 +176,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1640190967556264796}
   - component: {fileID: 1640190967546498926}
-  - component: {fileID: -626305826296313052}
-  - component: {fileID: 1106691917847549244}
+  - component: {fileID: 4281139695636686190}
+  - component: {fileID: 8027919755734472056}
+  - component: {fileID: 2548988574789989596}
+  - component: {fileID: 2715754965366227601}
   m_Layer: 0
   m_Name: Animal_Fox_01
   m_TagString: Tier0Target
@@ -192,7 +194,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640190967555923206}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.5299192, z: 0, w: 0.8480481}
   m_LocalPosition: {x: 2.42, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
@@ -210,7 +212,7 @@ Transform:
   - {fileID: 1640190967556283974}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -64, z: 0}
 --- !u!95 &1640190967546498926
 Animator:
   serializedVersion: 3
@@ -230,7 +232,46 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-626305826296313052
+--- !u!114 &4281139695636686190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640190967555923206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7f03c42c6a7804eac32342df43b576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &8027919755734472056
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640190967555923206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.06860987
+  m_Height: 0.23783565
+  m_Direction: 2
+  m_Center: {x: -5.4196662e-17, y: 0.07671963, z: -0.0088038845}
+--- !u!135 &2548988574789989596
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640190967555923206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.049331054
+  m_Center: {x: -7.2309085e-17, y: 0.15933132, z: 0.11789548}
+--- !u!114 &2715754965366227601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,19 +284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
---- !u!65 &1106691917847549244
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640190967555923206}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.06699173, y: 0.2001237, z: 1}
-  m_Center: {x: 0.00019099562, y: 0.10175188, z: 1.758353e-18}
 --- !u!1 &1640190967555956824
 GameObject:
   m_ObjectHideFlags: 0
