@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+
+    public static GameController SharedInstance;
     private int currentScore = 0;
     private float roundTime = 30;
     public bool isGameActive;
@@ -19,12 +21,17 @@ public class GameController : MonoBehaviour
     public Button resetButton;
     public Button exitButton;
 
-    private SpawnManager spawnController;
+    private TargetController _targetController;
+
+    private void Awake()
+    {
+        SharedInstance = this;
+    }
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
-        spawnController = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        _targetController = TargetController.SharedInstance;
         timerNumberText.text = "" + roundTime;
     }
 

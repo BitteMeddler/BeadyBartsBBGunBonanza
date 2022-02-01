@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RaycastShoot : MonoBehaviour
 {
-    private float fireRate = .2f;
+    private float fireRate = .6f;
     private float nextFire;
     public Transform gunEnd;
 
@@ -13,7 +13,6 @@ public class RaycastShoot : MonoBehaviour
 
     public ParticleSystem muzzleFlash;
     public ParticleSystem hitEffect;
-    public GameObject bb;
 
     private Camera fpsCam;
     private AudioSource gunAudio;
@@ -22,7 +21,7 @@ public class RaycastShoot : MonoBehaviour
     {
         fpsCam = GetComponentInParent<Camera>();
         gunAudio = GetComponent<AudioSource>();
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController = GameController.SharedInstance;
     }
 
     void Update()
@@ -49,7 +48,7 @@ public class RaycastShoot : MonoBehaviour
                 if (target != null)
                 {
                     gameController.ScoreTracker(target.pointValue);
-                    Destroy(target.gameObject);
+                    target.gameObject.SetActive(false);
                 }
             }
 
@@ -58,7 +57,14 @@ public class RaycastShoot : MonoBehaviour
 
     public void SpawnBB(Transform gunEndPos)
     {
+        GameObject bb = BBPool.SharedInstance.GetPooledBB();
         bbSpawnPosition = new Vector3(gunEndPos.position.x, gunEndPos.position.y, gunEndPos.position.z);
-        Instantiate(bb, bbSpawnPosition, this.transform.rotation);
+        if (bb != null)
+        {
+            bb.transform.position = bbSpawnPosition;
+            bb.transform.rotation = this.transform.rotation;
+            bb.SetActive(true);
+        }
+        //Instantiate(bb, bbSpawnPosition, this.transform.rotation);
     }
 }

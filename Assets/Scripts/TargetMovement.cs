@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class TargetMovement : MonoBehaviour
 {
-    private float moveSpeed;
-    private float boundary = 8;
+    private float moveSpeed = 5;
     public int pointValue;
+
+    private float topBoundary;
+
+    public TargetController _targetController;
+    public GameController _gameController;
+    public Vector3 originalPosition;
 
     private void Start()
     {
-        InitializeTargetProperties();
+        _targetController = TargetController.SharedInstance;
+        _gameController = GameController.SharedInstance;
+        originalPosition = transform.position;
+        topBoundary = originalPosition.y + .45f;
+        pointValue = 10;
     }
 
     void Update()
@@ -18,39 +27,21 @@ public class TargetMovement : MonoBehaviour
         Movement();
     }
 
-    public void InitializeTargetProperties()
-    {
-        if (gameObject.CompareTag("Tier0Target"))
-        {
-            pointValue = 25;
-            moveSpeed = 16f;
-        }
-        else if (gameObject.CompareTag("Tier1Target"))
-        {
-            pointValue = 5;
-            moveSpeed = 5f;
-        }
-        else if (gameObject.CompareTag("Tier2Target"))
-        {
-            pointValue = 10;
-            moveSpeed = 8f;
-        }
-        else if (gameObject.CompareTag("Tier3Target"))
-        {
-            pointValue = 50;
-            moveSpeed = 10f;
-        }
-    }
-
     public void Movement()
     {
-        
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-        if (this.transform.position.x > boundary || this.transform.position.x < -boundary)
+        if (transform.position.y < topBoundary && _gameController.isGameActive)
         {
-            Destroy(this.gameObject);
+            transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
         }
+        
     }
 
-    
+    public void OnDisable()
+    {
+        transform.position = originalPosition;
+    }
+
+
+
+
 }

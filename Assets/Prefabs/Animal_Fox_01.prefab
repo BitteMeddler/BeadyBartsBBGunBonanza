@@ -176,7 +176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1640190967556264796}
   - component: {fileID: 1640190967546498926}
-  - component: {fileID: 4281139695636686190}
   - component: {fileID: 8027919755734472056}
   - component: {fileID: 2548988574789989596}
   - component: {fileID: 2715754965366227601}
@@ -194,7 +193,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640190967555923206}
-  m_LocalRotation: {x: 0, y: -0.5299192, z: 0, w: 0.8480481}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.42, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
@@ -212,7 +211,7 @@ Transform:
   - {fileID: 1640190967556283974}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -64, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &1640190967546498926
 Animator:
   serializedVersion: 3
@@ -232,18 +231,6 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4281139695636686190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640190967555923206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b7f03c42c6a7804eac32342df43b576, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &8027919755734472056
 CapsuleCollider:
   m_ObjectHideFlags: 0

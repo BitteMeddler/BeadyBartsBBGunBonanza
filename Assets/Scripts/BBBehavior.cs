@@ -8,11 +8,16 @@ public class BBBehavior : MonoBehaviour
 
     void Start()
     {
-        Destroy(this.gameObject, 2);   
+   
     }
 
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);   
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        gameObject.SetActive(false);
     }
 }
