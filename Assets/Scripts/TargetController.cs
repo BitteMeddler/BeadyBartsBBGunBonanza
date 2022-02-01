@@ -5,13 +5,9 @@ using UnityEngine;
 public class TargetController : MonoBehaviour
 {
     public static TargetController SharedInstance;
-
     public GameObject[] targets;
     private GameObject[] targetsToSpawn;
-
-    private GameController gameControllerScript;
-
-    private int numberOfTargets = 3;
+    private int numberOfTargets = 1;
     private int randomIndex;
 
     private void Awake()
@@ -19,19 +15,9 @@ public class TargetController : MonoBehaviour
         SharedInstance = this;
     }
 
-    private void Start()
-    {
-        ActivateRandomTargets();
-    }
-
-    private void Update()
-    {
-  
-    }
-
     public void ActivateRandomTargets()
     {
-        
+        targetsToSpawn = new GameObject[numberOfTargets];
         for (int i = 0; i < numberOfTargets; i++)
         {
             
@@ -40,22 +26,20 @@ public class TargetController : MonoBehaviour
             {
                 randomIndex = Random.Range(0, targets.Length);
             }
+            targetsToSpawn[i] = targets[randomIndex];
             targets[randomIndex].SetActive(true);
         }
         
-        StartCoroutine("WaitAndReset");
+        StartCoroutine("WaitResetReactivate");
     }
 
-    IEnumerator WaitAndReset()
+    IEnumerator WaitResetReactivate()
     {
         yield return new WaitForSeconds(3.5f);
-        for (int i = 0; i < targets.Length; i++)
+        for (int i = 0; i < targetsToSpawn.Length; i++)
         {
-            targets[i].SetActive(false);
+            targetsToSpawn[i].SetActive(false);
         }
         ActivateRandomTargets();
     }
-
-    
-
 }

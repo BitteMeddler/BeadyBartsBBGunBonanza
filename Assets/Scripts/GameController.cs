@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-
     public static GameController SharedInstance;
     private int currentScore = 0;
     private float roundTime = 30;
@@ -80,6 +79,7 @@ public class GameController : MonoBehaviour
         startButton.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         isGameActive = true;
+        _targetController.ActivateRandomTargets();
     }
 
     public void RestartGame()
