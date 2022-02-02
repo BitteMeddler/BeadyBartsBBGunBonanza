@@ -36,7 +36,7 @@ public class RaycastShoot : MonoBehaviour
             nextFire = Time.time + fireRate;
             muzzleFlash.Emit(1);
             Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
-            Vector3 gunEndPos = gunEnd.transform.position;
+            //Transform gunEndPos = gunEnd;
             RaycastHit hit;
 
             if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit))
@@ -44,9 +44,8 @@ public class RaycastShoot : MonoBehaviour
                 hitEffect.transform.position = hit.point;
                 hitEffect.transform.forward = hit.normal;
                 hitEffect.Emit(1);
-                SpawnBB(gunEndPos);
+                SpawnBB(gunEnd);
                 TargetMovement target = hit.collider.GetComponent<TargetMovement>();
-
                 if (target != null)
                 {
                     gameController.ScoreTracker(target.pointValue);
@@ -57,10 +56,10 @@ public class RaycastShoot : MonoBehaviour
         }
     }
 
-    public void SpawnBB(Vector3 gunEndPos)
+    public void SpawnBB(Transform gunEndPos)
     {
         GameObject bb = BBPool.SharedInstance.GetPooledBB();
-        bbSpawnPosition = gunEndPos;
+        bbSpawnPosition = new Vector3(gunEndPos.position.x, gunEndPos.position.y, gunEndPos.position.z);
         if (bb != null)
         {
             bb.transform.position = bbSpawnPosition;

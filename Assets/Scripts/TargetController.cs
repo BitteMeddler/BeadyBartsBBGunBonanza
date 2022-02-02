@@ -35,7 +35,7 @@ public class TargetController : MonoBehaviour
 
     IEnumerator WaitResetReactivate()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(5f);
         for (int i = 0; i < targetsToSpawn.Length; i++)
         {
             targetsToSpawn[i].SetActive(false);

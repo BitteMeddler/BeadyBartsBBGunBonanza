@@ -7,7 +7,7 @@ public class BBPool : MonoBehaviour
     public static BBPool SharedInstance;
     private List<GameObject> pooledBBs;
     public GameObject bbToPool;
-    private int amountToPool;
+    public int amountToPool;
 
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class BBPool : MonoBehaviour
     }
 
     private void Start()
-    {
+    { 
         pooledBBs = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountToPool; i ++)
