@@ -156,7 +156,7 @@ Transform:
   - {fileID: 5172526649218600602}
   - {fileID: 5172526649864802052}
   m_Father: {fileID: 1383542589}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &143014536
 GameObject:
@@ -1791,7 +1791,7 @@ RectTransform:
   m_GameObject: {fileID: 793044848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1052247907}
   m_RootOrder: 0
@@ -1966,7 +1966,7 @@ Transform:
   - {fileID: 5172526650913765736}
   - {fileID: 5172526650837902153}
   m_Father: {fileID: 1383542589}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &845056906
 GameObject:
@@ -3077,43 +3077,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 653000364}
-  - {fileID: 1393941277}
   - {fileID: 1931486694}
   - {fileID: 1559659700}
   - {fileID: 820160357}
   - {fileID: 29345305}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1393941276
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1393941277}
-  m_Layer: 0
-  m_Name: Targets
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1393941277
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393941276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1383542589}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1408279312
 PrefabInstance:
@@ -3444,9 +3413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef14005548c6eb4caafe0a08c7ad8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledBBs: []
   bbToPool: {fileID: 996590519459759547, guid: 479c13c66e919744999630b4d968cd95, type: 3}
-  amountToPool: 20
 --- !u!4 &1548846430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 441262, guid: 0a80b1f206e07774a9275bdb6b782ecd,
@@ -3687,7 +3654,7 @@ Transform:
   - {fileID: 5172526650177349094}
   - {fileID: 5172526650411226217}
   m_Father: {fileID: 1383542589}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1605326121 stripped
 Transform:
@@ -4658,7 +4625,7 @@ Transform:
   - {fileID: 1223059579}
   - {fileID: 1776653833}
   m_Father: {fileID: 1383542589}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1958626965
 PrefabInstance:
@@ -4899,6 +4866,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.69
       objectReference: {fileID: 0}
+    - target: {fileID: 4362502290431520780, guid: 49a943e1c25d67245b6263f3231e89ac,
+        type: 3}
+      propertyPath: sensitivity.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362502290431520780, guid: 49a943e1c25d67245b6263f3231e89ac,
+        type: 3}
+      propertyPath: sensitivity.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362502290431520780, guid: 49a943e1c25d67245b6263f3231e89ac,
+        type: 3}
+      propertyPath: acceleration.x
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362502290431520780, guid: 49a943e1c25d67245b6263f3231e89ac,
+        type: 3}
+      propertyPath: acceleration.y
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 4362502290431520782, guid: 49a943e1c25d67245b6263f3231e89ac,
         type: 3}
       propertyPath: m_Name
@@ -5084,9 +5071,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &5172526649276896968
 Transform:
   m_ObjectHideFlags: 0
@@ -5161,9 +5145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &5172526649276896974
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5275,9 +5256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5172526649391994707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5364,9 +5342,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &5172526649864802050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5539,9 +5514,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &5172526650177349093
 GameObject:
   m_ObjectHideFlags: 0
@@ -5653,21 +5625,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
---- !u!114 &5172526650272018971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5172526650272018972}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 371b1ee74e66941478d82797e084aeb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5172526650272018972
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,7 +5637,6 @@ GameObject:
   - component: {fileID: 5172526650272018968}
   - component: {fileID: 5172526650272018969}
   - component: {fileID: 5172526650272018974}
-  - component: {fileID: 5172526650272018971}
   - component: {fileID: 5172526650272018970}
   m_Layer: 0
   m_Name: Target0
@@ -5779,9 +5735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5172526650411226221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5905,9 +5858,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5172526650736128531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6043,9 +5993,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &5172526650789549630
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6157,9 +6104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5172526650837902157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6295,9 +6239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
-  _targetController: {fileID: 0}
-  _gameController: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &5172526650913765742
 MeshRenderer:
   m_ObjectHideFlags: 0

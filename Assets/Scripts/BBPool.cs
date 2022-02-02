@@ -5,9 +5,9 @@ using UnityEngine;
 public class BBPool : MonoBehaviour
 {
     public static BBPool SharedInstance;
-    public List<GameObject> pooledBBs;
+    private List<GameObject> pooledBBs;
     public GameObject bbToPool;
-    public int amountToPool;
+    private int amountToPool;
 
     private void Awake()
     {

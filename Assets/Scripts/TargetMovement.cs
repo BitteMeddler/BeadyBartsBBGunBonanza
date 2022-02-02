@@ -9,13 +9,15 @@ public class TargetMovement : MonoBehaviour
 
     private float topBoundary;
 
-    public Vector3 originalPosition;
+    private Vector3 originalPosition;
+    private GameController _gameController;
 
     private void Start()
     {
         originalPosition = transform.position;
         topBoundary = originalPosition.y + .45f;
         pointValue = 10;
+        _gameController = GameController.SharedInstance;
     }
 
     void Update()
@@ -25,7 +27,7 @@ public class TargetMovement : MonoBehaviour
 
     public void Movement()
     {
-        if (transform.position.y < topBoundary)
+        if (transform.position.y < topBoundary && _gameController.isGameActive)
         {
             transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
         }

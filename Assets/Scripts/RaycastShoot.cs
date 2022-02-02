@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RaycastShoot : MonoBehaviour
 {
-    private float fireRate = .6f;
+    private float fireRate = .4f;
     private float nextFire;
     public Transform gunEnd;
 
