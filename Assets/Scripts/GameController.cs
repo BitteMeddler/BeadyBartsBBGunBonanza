@@ -60,25 +60,28 @@ public class GameController : MonoBehaviour
             GameEnd();   
         }
         return timer;
-        
     }
 
     public void GameEnd()
     {
         timerNumberText.text = "" + 0;
-
         isGameActive = false;
+
         gameOverText.gameObject.SetActive(true);
         resetButton.gameObject.SetActive(true);
         exitButton.gameObject.SetActive(true);
+
         Cursor.lockState = CursorLockMode.None;
     }
 
     public void StartGame()
     {
         startButton.gameObject.SetActive(false);
+
         Cursor.lockState = CursorLockMode.Locked;
+
         isGameActive = true;
+        
         _targetController.ActivateRandomTargets();
     }
 

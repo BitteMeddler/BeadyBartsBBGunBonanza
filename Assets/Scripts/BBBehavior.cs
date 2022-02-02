@@ -6,11 +6,6 @@ public class BBBehavior : MonoBehaviour
 {
     private float moveSpeed = 250f;
 
-    void Start()
-    {
-   
-    }
-
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);   

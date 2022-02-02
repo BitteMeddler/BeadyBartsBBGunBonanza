@@ -7,8 +7,7 @@ public class MouseLook : MonoBehaviour
     [SerializeField] private Vector2 acceleration;
     [SerializeField] private Vector2 sensitivity;
     [SerializeField] private float maxHorizontalAngle;
-    [SerializeField] private float maxVerticalAngleTop;
-    [SerializeField] private float maxVerticalAngleBottom;
+    [SerializeField] private float maxVerticalAngle;
     [SerializeField] private float inputLagPeriod;
 
     private Vector2 velocity;
@@ -37,15 +36,13 @@ public class MouseLook : MonoBehaviour
     {
         if (!gameManager.isGameActive)
         {
-            maxVerticalAngleTop = 0;
-            maxVerticalAngleBottom = 0;
+            maxVerticalAngle= 0;
         }
         else
         {
-            maxVerticalAngleTop = -20f;
-            maxVerticalAngleBottom = 20f;
+            maxVerticalAngle = 20f;
         }
-        return Mathf.Clamp(angle, maxVerticalAngleTop, maxVerticalAngleBottom);
+        return Mathf.Clamp(angle, -maxVerticalAngle, maxVerticalAngle);
     }
 
     private float ClampHorizontalAngle(float angle)
@@ -56,7 +53,7 @@ public class MouseLook : MonoBehaviour
         }
         else
         {
-            maxHorizontalAngle = 30f;
+            maxHorizontalAngle = 34f;
         }
         return Mathf.Clamp(angle, -maxHorizontalAngle, maxHorizontalAngle);
     }
