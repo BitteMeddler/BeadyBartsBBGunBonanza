@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetMovement : MonoBehaviour
+public class TargetProperties : MonoBehaviour
 {
     private float moveSpeed = 5;
-    public int pointValue;
+    public int pointValue = 10;
 
     private float topBoundary;
 
@@ -14,32 +14,23 @@ public class TargetMovement : MonoBehaviour
 
     private void Start()
     {
+        _gameController = GameController.SharedInstance;
         originalPosition = transform.position;
         topBoundary = originalPosition.y + .45f;
-        pointValue = 10;
-        _gameController = GameController.SharedInstance;
     }
 
     void Update()
-    {
-        Movement();
-    }
-
-    public void Movement()
     {
         if (transform.position.y < topBoundary && _gameController.isGameActive)
         {
             transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
         }
-        
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
         transform.position = originalPosition;
     }
 
-
-
-
 }
+

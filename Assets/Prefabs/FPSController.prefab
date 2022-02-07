@@ -9638,8 +9638,7 @@ MonoBehaviour:
   acceleration: {x: 2000, y: 2000}
   sensitivity: {x: 100, y: -100}
   maxHorizontalAngle: 36
-  maxVerticalAngleTop: -20
-  maxVerticalAngleBottom: 13
+  maxVerticalAngle: 0
   inputLagPeriod: 0.001
 --- !u!1 &4362502290765795282
 GameObject:
@@ -9680,7 +9679,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4362502291258359597}
-  - component: {fileID: 4362502291258359594}
+  - component: {fileID: 8681389644651902325}
+  - component: {fileID: 76417572119999423}
+  - component: {fileID: 1301684466}
+  - component: {fileID: 1301684467}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -9705,7 +9707,7 @@ Transform:
   m_Father: {fileID: 4362502291444075322}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4362502291258359594
+--- !u!114 &8681389644651902325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9714,13 +9716,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 4362502291258359596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa0bef100d10ef144bedb0c088b0c5fc, type: 3}
+  m_Script: {fileID: 11500000, guid: ffa8b6738cc322d4db64b21413aa9794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &76417572119999423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362502291258359596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16bcb7ccd075bf546a94cd48d0e6f79b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gunEnd: {fileID: 4362502290765795283}
+--- !u!114 &1301684466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362502291258359596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e424cc99266b9094c9a2153849f62fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextFire: 0
+--- !u!114 &1301684467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362502291258359596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082fdf00a0afd2044ba04c7d2d1828b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   muzzleFlash: {fileID: 4488678904587719446}
   hitEffect: {fileID: 2195753754121965670}
-  bb: {fileID: 996590519459759547, guid: 479c13c66e919744999630b4d968cd95, type: 3}
 --- !u!1 &4362502291444075327
 GameObject:
   m_ObjectHideFlags: 0
@@ -9842,7 +9880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.991
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
       propertyPath: m_LocalRotation.w

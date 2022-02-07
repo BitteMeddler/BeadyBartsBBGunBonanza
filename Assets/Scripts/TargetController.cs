@@ -7,9 +7,10 @@ public class TargetController : MonoBehaviour
     public static TargetController SharedInstance;
     public GameObject[] targets;
     private GameObject[] targetsToSpawn;
-    private int numberOfTargets = 3;
+    private int numberOfTargets = 5;
+    private float targetUpTime = 4.3f;
     private int randomIndex;
-
+    
     private void Awake()
     {
         SharedInstance = this;
@@ -35,7 +36,7 @@ public class TargetController : MonoBehaviour
 
     IEnumerator WaitResetReactivate()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(targetUpTime);
         for (int i = 0; i < targetsToSpawn.Length; i++)
         {
             targetsToSpawn[i].SetActive(false);

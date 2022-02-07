@@ -66,6 +66,7 @@ public class GameController : MonoBehaviour
     {
         timerNumberText.text = "" + 0;
         isGameActive = false;
+        _targetController.gameObject.SetActive(false);
 
         gameOverText.gameObject.SetActive(true);
         resetButton.gameObject.SetActive(true);
@@ -81,7 +82,7 @@ public class GameController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         isGameActive = true;
-        
+        _targetController.gameObject.SetActive(true);
         _targetController.ActivateRandomTargets();
     }
 
