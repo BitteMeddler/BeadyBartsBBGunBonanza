@@ -52,12 +52,12 @@ public class GameController : MonoBehaviour
     {
         int timer = (int)(roundTime -= Time.deltaTime);
         if (timer > 0 && isGameActive == true)
-        { 
+        {
             timerNumberText.text = "" + timer;
         }
         else
         {
-            GameEnd();   
+            GameEnd();
         }
         return timer;
     }
@@ -83,7 +83,6 @@ public class GameController : MonoBehaviour
 
         isGameActive = true;
         _targetController.gameObject.SetActive(true);
-        _targetController.ActivateRandomTargets();
     }
 
     public void RestartGame()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetController : MonoBehaviour
 {
     public static TargetController SharedInstance;
-    public GameObject[] targets;
+    public GameObject[] targets;  //should just be able to make this the pool.
     private GameObject[] targetsToSpawn;
     private int numberOfTargets = 5;
     private float targetUpTime = 4.3f;
@@ -14,6 +14,11 @@ public class TargetController : MonoBehaviour
     private void Awake()
     {
         SharedInstance = this;
+    }
+
+    private void OnEnable()
+    {
+        ActivateRandomTargets();
     }
 
     public void ActivateRandomTargets()
