@@ -7,7 +7,7 @@ public class SpawnController : MonoBehaviour
     public static SpawnController SharedInstance;
     public Vector3[] spawnLocations;
 
-    private int numberOfTargets = 5;
+    //private int numberOfTargets = 5;
     private int randomIndex;
     private float targetUpTime = 4.3f;
 

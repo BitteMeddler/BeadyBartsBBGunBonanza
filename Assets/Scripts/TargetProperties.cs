@@ -21,7 +21,7 @@ public class TargetProperties : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < topBoundary && _gameController.isGameActive)
+        if (_gameController.isGameActive && transform.position.y < topBoundary)
         {
             transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
         }
