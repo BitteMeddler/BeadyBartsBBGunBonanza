@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public Button exitButton;
 
     private TargetController _targetController;
+    public GameObject _countdownTimer;
 
     private void Awake()
     {
@@ -36,30 +37,13 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (isGameActive)
-        {
-            CountDownTimer();
-        }
+
     }
 
     public void ScoreTracker(int pointsFromTarget)
     {
         currentScore += pointsFromTarget;
         scoreNumberText.text = "" + currentScore;
-    }
-
-    public int CountDownTimer()
-    {
-        int timer = (int)(roundTime -= Time.deltaTime);
-        if (timer > 0 && isGameActive == true)
-        {
-            timerNumberText.text = "" + timer;
-        }
-        else
-        {
-            GameEnd();
-        }
-        return timer;
     }
 
     public void GameEnd()
@@ -83,6 +67,7 @@ public class GameController : MonoBehaviour
 
         isGameActive = true;
         _targetController.gameObject.SetActive(true);
+        _countdownTimer.gameObject.SetActive(true);
     }
 
     public void RestartGame()
